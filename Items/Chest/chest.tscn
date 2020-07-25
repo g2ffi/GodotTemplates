@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://chest.gd" type="Script" id=1]
+[ext_resource path="res://chest.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 8 )
+
+[node name="chest" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sprite" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 2 )
+hframes = 2
+
+[node name="col" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+__meta__ = {
+"_editor_description_": "Area that player will collide with"
+}
