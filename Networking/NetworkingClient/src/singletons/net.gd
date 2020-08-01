@@ -4,10 +4,13 @@ const SERVER_IP = "127.0.0.1" #LOCAL HOST
 const SERVER_PORT = 22422
 const MAX_PLAYERS = 12
 
+var net_fps = 2 #How often a second information is sent to the server
+var net_timer = 0.0
+
 var player_list:Dictionary = {} #Collect others data
 var isGameStarted:bool = false
 
-var self_data = {"Name":"NAME","Position":Vector2(0,0)} #Send our data
+var self_data = {"Name":"GIFFI","Position":Vector2(0,0)} #Send our data
 var self_id
 
 func _ready():
@@ -20,12 +23,17 @@ func join_server():
 	get_tree().network_peer = peer
 
 #METHODS
-func _physics_process(delta):
+func _process(delta):
 	if isGameStarted:
-		send_data()
+		
+		#Calcultes if enough time is passed to send all the information
+		net_timer+=delta
+		if net_timer < 1.0/net_fps:
+			return
+		net_timer-=1.0/net_fps #Substract from the already gathered delta net_fps amount
+		
+		rpc_id(1,"sent_data",self_id,self_data) #Sends whole dict from ln13
 
-func send_data():
-	rpc_id(1,"sent_data",self_id,self_data)
 
 #REMOTES
 remote func player_connected(id,data):
@@ -39,7 +47,6 @@ remote func start_game():
 
 
 #Signals
-
 func _connected_ok():
 	self_id = get_tree().get_network_unique_id()
 	rpc_id(1,"register_player",self_id,self_data)
