@@ -14,4 +14,13 @@ text = "JOIN"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="b_name" type="TextEdit" parent="."]
+margin_left = 486.0
+margin_top = 315.0
+margin_right = 661.0
+margin_bottom = 336.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_up" from="join" to="." method="_on_join_button_up"]

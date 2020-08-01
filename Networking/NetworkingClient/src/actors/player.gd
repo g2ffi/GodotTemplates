@@ -7,7 +7,6 @@ var peer = preload("res://src/actors/peer.tscn")
 
 func _ready():
 	for p in net.peer_list:
-		print(p)
 		_create_peer(p)
 	
 	if !isPeer:
@@ -31,9 +30,9 @@ func _physics_process(delta):
 	motion = motion.normalized() * SPEED
 	
 	motion = move_and_slide(motion)
-	net.self_data.Position=self.global_position
+	net.self_data.pos=self.global_position
 
 func _create_peer(id):
 	var instance = peer.instance()
-	instance.ID = id
+	instance.PEER_DATA = net.peer_list[id]
 	get_parent().call_deferred("add_child",instance)

@@ -6,4 +6,6 @@ func _process(delta):
 	text = ""
 	for ID in net.peer_list:
 		#          ID         Retrieve the name of the client
-		text += str(ID) + " " + str(net.peer_list[ID].Name) +" "+str(net.peer_list[ID].Position)+"\n"
+		var PEER_DATA:Dictionary = net.peer_list[ID]
+		text += str(ID) + " " + str(PEER_DATA.name) + " " + str(PEER_DATA.pos)+"\n"
+		#text += str(ID) + " " + str(net.peer_list[ID].Name) +" "+str(net.peer_list[ID].Position)+"\n"

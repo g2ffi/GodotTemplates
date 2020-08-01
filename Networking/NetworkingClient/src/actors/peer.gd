@@ -1,6 +1,10 @@
 extends Sprite
 
-var ID = 0
+var PEER_DATA:Dictionary
 
 func _physics_process(delta):
-	self.global_position = net.peer_list[ID].Position
+	if net.peer_list[PEER_DATA.ID]==null:
+		queue_free()
+	else:
+		PEER_DATA=net.peer_list[PEER_DATA.ID]
+	self.global_position = PEER_DATA.pos

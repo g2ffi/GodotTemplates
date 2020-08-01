@@ -10,12 +10,12 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
-"class": "peer",
+"class": "peer_data",
 "language": "GDScript",
 "path": "res://src/peer/peer.gd"
 } ]
 _global_script_class_icons={
-"peer": ""
+"peer_data": ""
 }
 
 [application]
