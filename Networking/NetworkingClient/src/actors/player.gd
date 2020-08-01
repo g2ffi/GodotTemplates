@@ -3,8 +3,13 @@ extends KinematicBody2D
 const SPEED = 100
 var motion = Vector2.ZERO
 var isPeer = false
+var peer = preload("res://src/actors/peer.tscn")
 
 func _ready():
+	for p in net.peer_list:
+		print(p)
+		_create_peer(p)
+	
 	if !isPeer:
 		return
 	
@@ -27,3 +32,8 @@ func _physics_process(delta):
 	
 	motion = move_and_slide(motion)
 	net.self_data.Position=self.global_position
+
+func _create_peer(id):
+	var instance = peer.instance()
+	instance.ID = id
+	get_parent().call_deferred("add_child",instance)
