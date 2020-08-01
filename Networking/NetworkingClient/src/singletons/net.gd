@@ -1,6 +1,6 @@
 extends Node
 
-const SERVER_IP = "127.0.0.1" #LOCAL HOST
+const SERVER_IP = "91.158.164.55" #LOCAL HOST
 const SERVER_PORT = 22422
 const MAX_PLAYERS = 12
 
@@ -10,7 +10,7 @@ var net_timer = 0.0
 var peer_list:Dictionary = {} #Collect others data
 var isGameStarted:bool = false
 
-var self_data = {"Name":"GIFFI","Position":Vector2(0,0)} #Send our data
+var self_data = {"Name":"PROJonyZ","Position":Vector2(0,0)} #Send our data
 var self_id
 
 func _ready():
