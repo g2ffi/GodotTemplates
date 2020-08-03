@@ -63,7 +63,7 @@ Line 13 add an entry for the animation frame
 var self_data = {"ID":0,
 "name":"NAME",
 "pos":Vector2(0,0),
-"frame":0
+"frame":0 #ADDED LINE
 } 
 ```
 
