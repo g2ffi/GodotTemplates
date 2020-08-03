@@ -13,7 +13,7 @@
 On client's net.gd is a dictionary which is sent to a server (self_data) and server puts in to a list (peer_list).
 Server distributes this list to others
 
-## SELF_DATA structure:
+### SELF_DATA structure:
 ```gd
 self_data = 
 {
@@ -23,7 +23,7 @@ self_data =
 }
 ```
 
-## PEER_LIST structure:
+### PEER_LIST structure:
 
 peer_list is dictionary where all other peers data is stored in.
 
