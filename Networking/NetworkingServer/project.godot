@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="NetworkingServer"
-run/main_scene="res://Control.tscn"
+run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -30,7 +30,8 @@ net="*res://src/net.gd"
 
 [display]
 
-window/stretch/aspect="keep"
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
 
 [rendering]
 

@@ -1,12 +1,8 @@
 extends RichTextLabel
 
 func _ready():
-	net.OUTPUT = self
-	net.create_server()
-	add_line("TEST SERVER STARTED")
-	add_line("PORT: "+str(net.SERVER_PORT))
-	add_line("MAX_PLAYERS :"+str(net.MAX_PLAYERS))
+	net.connect("c_add_line",self,"add_line")
 
 func add_line(message:String):
-	var wholeOutput = text
-	text = wholeOutput+message+"\n"
+	text += message+"\n"
+	print(message)

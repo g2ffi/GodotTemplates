@@ -8,19 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Resource",
-"class": "peer_data",
-"language": "GDScript",
-"path": "res://src/classes/peer.gd"
-} ]
+_global_script_classes=[  ]
 _global_script_class_icons={
-"peer_data": ""
+
 }
 
 [application]
 
-config/name="Networking"
+config/name="NetworkingClient"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 

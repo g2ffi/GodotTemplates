@@ -8,14 +8,14 @@ script = ExtResource( 1 )
 [node name="join" type="Button" parent="."]
 margin_left = 488.0
 margin_top = 344.0
-margin_right = 664.0
+margin_right = 663.0
 margin_bottom = 456.0
 text = "JOIN"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="b_name" type="TextEdit" parent="."]
+[node name="t_name" type="TextEdit" parent="."]
 margin_left = 486.0
 margin_top = 315.0
 margin_right = 661.0
