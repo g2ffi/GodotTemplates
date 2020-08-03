@@ -83,3 +83,7 @@ func _process(delta):
 ```
 
 You don't have to touch the server's scripts to send variables around
+
+## LISENCE
+
+EVERYTHING UNDER THIS GITHUB REPOSITORY IS UNDER THE [MIT LICENSE](https://github.com/g2ffi/GodotTemplates/blob/master/LICENSE)
