@@ -10,7 +10,7 @@
 
 
 ## How it works: 
-On client's net.gd is a dictionary which is sent to a server (self_data) and server puts in to a list (peer_list)
+On client's net.gd is a dictionary which is sent to a server (self_data) and server puts in to a list (peer_list).
 Server distributes this list to others
 
 ## SELF_DATA structure:
@@ -70,14 +70,14 @@ var self_data = {"ID":0,
 player.gd
 Update the frame
 ```gd
-func _procces(delta):
+func _process(delta):
     net.self_data[anim_frame] = $anim.frame
 ```
 
 peer.gd
 Update peer's frame from the dictionary, remember the self_data is always distributed
 ```gd
-func _procces(delta):
+func _process(delta):
     #AnimatedSprite
     $anim.frame = peer_data[anim_frame] #In practice you wouldn't send animation frames through net though
 ```
