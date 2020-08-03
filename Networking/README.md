@@ -10,7 +10,7 @@
 
 
 ## How it works: 
-On client's net.gd is a dictionary which is sent to a server (self_data) and server puts in to a list (peer_list)
+On client's net.gd is a dictionary which is sent to a server (self_data) and server puts in to a list (peer_list).
 Server distributes this list to others
 
 ## SELF_DATA structure:
