@@ -10,7 +10,8 @@
 
 
 ## How it works: 
-On net.gd there's a dictionary called self_data which is sent to the server in it's entirety, and it's put into the server's peer_list using peer's id as a key, this list is sent back so peers gets others data
+On client's net.gd is a dictionary which is sent to a server (self_data) and server puts in to a list (peer_list)
+Server distributes this list to others
 
 ## SELF_DATA structure:
 ```gd
@@ -55,8 +56,7 @@ To add a new variable to be sent for example Animation
 * Add code to the peer that retrieves the animation from the peer_list and plays it on the animationplayer
 * peer.tscn has a one of a peer's data on it (peer_data)
 
-**EXAMPLE**
-
+## Example:
 net.gd
 Line 13 add an entry for the animation frame
 ```gd
