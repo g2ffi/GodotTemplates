@@ -3,7 +3,6 @@ extends KinematicBody2D
 const SPEED = 100
 var motion = Vector2.ZERO
 var peer = preload("res://src/actors/peer.tscn")
-
 func _ready():
 	#Create peer for every ID from the list
 	for p in net.peer_list:
@@ -34,5 +33,5 @@ func _create_peer(id):
 	var instance = peer.instance()
 	if net.peer_list[id] == null:
 		return
-	instance.PEER_DATA = net.peer_list[id]
+	instance.peer_data = net.peer_list[id]
 	get_parent().call_deferred("add_child",instance)

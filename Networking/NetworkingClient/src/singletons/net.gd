@@ -10,7 +10,10 @@ var net_fps = 1 #!PEER GETS THIS FROM THE SERVER! How often a second information
 var net_timer = 0.0
 
 var peer_list:Dictionary = {} #Collect others data
-var self_data = {"ID":0,"name":"NAME","pos":Vector2(0,0)} #This is sent (net_fps) times a second to the server
+var self_data = {"ID":0,
+"name":"NAME",
+"pos":Vector2(0,0)
+} #This is sent (net_fps) times a second to the server
 
 func _ready():
 	get_tree().connect("connected_to_server", self, "_on_server_connect")
